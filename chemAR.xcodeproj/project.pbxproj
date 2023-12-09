@@ -10,7 +10,25 @@
 		E414FAE72B232AF500DC68C0 /* chemARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAE62B232AF500DC68C0 /* chemARApp.swift */; };
 		E414FAE92B232AF500DC68C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAE82B232AF500DC68C0 /* ContentView.swift */; };
 		E414FAEB2B232AF700DC68C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E414FAEA2B232AF700DC68C0 /* Assets.xcassets */; };
-		E414FAEE2B232AF700DC68C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E414FAED2B232AF700DC68C0 /* Preview Assets.xcassets */; };
+		E414FAFB2B232B2100DC68C0 /* ElementInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAF52B232B2100DC68C0 /* ElementInfo.swift */; };
+		E414FAFC2B232B2100DC68C0 /* AtomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAF62B232B2100DC68C0 /* AtomView.swift */; };
+		E414FAFD2B232B2100DC68C0 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAF72B232B2100DC68C0 /* Elements.swift */; };
+		E414FAFE2B232B2100DC68C0 /* filterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAF82B232B2100DC68C0 /* filterData.swift */; };
+		E414FAFF2B232B2100DC68C0 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAF92B232B2100DC68C0 /* ListItem.swift */; };
+		E414FB002B232B2100DC68C0 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAFA2B232B2100DC68C0 /* DetailsView.swift */; };
+		E414FB042B232B6700DC68C0 /* blocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FB032B232B6700DC68C0 /* blocksView.swift */; };
+		E414FB092B23301900DC68C0 /* itemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FB082B23301900DC68C0 /* itemDetails.swift */; };
+		E414FB0B2B23455900DC68C0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E414FB0A2B23455900DC68C0 /* Launch Screen.storyboard */; };
+		E414FB0D2B234A3F00DC68C0 /* TipComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FB0C2B234A3F00DC68C0 /* TipComponent.swift */; };
+		E414FB132B23596F00DC68C0 /* arComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FB122B23596F00DC68C0 /* arComponent.swift */; };
+		E4DE8DB22B23983500191B15 /* iPhoneDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DB12B23983500191B15 /* iPhoneDetails.swift */; };
+		E4DE8DB42B23985300191B15 /* iPadDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DB32B23985300191B15 /* iPadDetails.swift */; };
+		E4DE8DBA2B23A53000191B15 /* searchByAtomicNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DB92B23A53000191B15 /* searchByAtomicNumber.swift */; };
+		E4DE8DBD2B2433DD00191B15 /* iPhoneHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DBC2B2433DD00191B15 /* iPhoneHome.swift */; };
+		E4DE8DBF2B2433E600191B15 /* iPadHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DBE2B2433E600191B15 /* iPadHome.swift */; };
+		E4DE8DC32B243B0C00191B15 /* randomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DC22B243B0C00191B15 /* randomElement.swift */; };
+		E4DE8DC52B243B2600191B15 /* deviceCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DC42B243B2600191B15 /* deviceCheck.swift */; };
+		E4DE8DC92B2442BB00191B15 /* quizQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DC82B2442BB00191B15 /* quizQuestions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +36,25 @@
 		E414FAE62B232AF500DC68C0 /* chemARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chemARApp.swift; sourceTree = "<group>"; };
 		E414FAE82B232AF500DC68C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E414FAEA2B232AF700DC68C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E414FAED2B232AF700DC68C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E414FAF52B232B2100DC68C0 /* ElementInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementInfo.swift; sourceTree = "<group>"; };
+		E414FAF62B232B2100DC68C0 /* AtomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomView.swift; sourceTree = "<group>"; };
+		E414FAF72B232B2100DC68C0 /* Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
+		E414FAF82B232B2100DC68C0 /* filterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = filterData.swift; sourceTree = "<group>"; };
+		E414FAF92B232B2100DC68C0 /* ListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		E414FAFA2B232B2100DC68C0 /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		E414FB032B232B6700DC68C0 /* blocksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blocksView.swift; sourceTree = "<group>"; };
+		E414FB082B23301900DC68C0 /* itemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemDetails.swift; sourceTree = "<group>"; };
+		E414FB0A2B23455900DC68C0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E414FB0C2B234A3F00DC68C0 /* TipComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipComponent.swift; sourceTree = "<group>"; };
+		E414FB122B23596F00DC68C0 /* arComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arComponent.swift; sourceTree = "<group>"; };
+		E4DE8DB12B23983500191B15 /* iPhoneDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneDetails.swift; sourceTree = "<group>"; };
+		E4DE8DB32B23985300191B15 /* iPadDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadDetails.swift; sourceTree = "<group>"; };
+		E4DE8DB92B23A53000191B15 /* searchByAtomicNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchByAtomicNumber.swift; sourceTree = "<group>"; };
+		E4DE8DBC2B2433DD00191B15 /* iPhoneHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneHome.swift; sourceTree = "<group>"; };
+		E4DE8DBE2B2433E600191B15 /* iPadHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHome.swift; sourceTree = "<group>"; };
+		E4DE8DC22B243B0C00191B15 /* randomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomElement.swift; sourceTree = "<group>"; };
+		E4DE8DC42B243B2600191B15 /* deviceCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deviceCheck.swift; sourceTree = "<group>"; };
+		E4DE8DC82B2442BB00191B15 /* quizQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizQuestions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,20 +87,78 @@
 		E414FAE52B232AF500DC68C0 /* chemAR */ = {
 			isa = PBXGroup;
 			children = (
+				E4DE8DBB2B2433CB00191B15 /* home */,
+				E414FB0F2B234E5700DC68C0 /* ar */,
+				E414FB072B23300200DC68C0 /* components */,
+				E414FB022B232B5E00DC68C0 /* blocks */,
+				E414FB012B232B3300DC68C0 /* data */,
+				E414FAF42B232B0E00DC68C0 /* info */,
 				E414FAE62B232AF500DC68C0 /* chemARApp.swift */,
 				E414FAE82B232AF500DC68C0 /* ContentView.swift */,
 				E414FAEA2B232AF700DC68C0 /* Assets.xcassets */,
-				E414FAEC2B232AF700DC68C0 /* Preview Content */,
+				E414FB0A2B23455900DC68C0 /* Launch Screen.storyboard */,
 			);
 			path = chemAR;
 			sourceTree = "<group>";
 		};
-		E414FAEC2B232AF700DC68C0 /* Preview Content */ = {
+		E414FAF42B232B0E00DC68C0 /* info */ = {
 			isa = PBXGroup;
 			children = (
-				E414FAED2B232AF700DC68C0 /* Preview Assets.xcassets */,
+				E414FAF62B232B2100DC68C0 /* AtomView.swift */,
+				E414FAFA2B232B2100DC68C0 /* DetailsView.swift */,
+				E4DE8DB12B23983500191B15 /* iPhoneDetails.swift */,
+				E4DE8DB32B23985300191B15 /* iPadDetails.swift */,
 			);
-			path = "Preview Content";
+			path = info;
+			sourceTree = "<group>";
+		};
+		E414FB012B232B3300DC68C0 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E414FAF52B232B2100DC68C0 /* ElementInfo.swift */,
+				E414FAF82B232B2100DC68C0 /* filterData.swift */,
+				E414FAF72B232B2100DC68C0 /* Elements.swift */,
+				E4DE8DC22B243B0C00191B15 /* randomElement.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		E414FB022B232B5E00DC68C0 /* blocks */ = {
+			isa = PBXGroup;
+			children = (
+				E414FB032B232B6700DC68C0 /* blocksView.swift */,
+			);
+			path = blocks;
+			sourceTree = "<group>";
+		};
+		E414FB072B23300200DC68C0 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				E414FAF92B232B2100DC68C0 /* ListItem.swift */,
+				E414FB082B23301900DC68C0 /* itemDetails.swift */,
+				E414FB0C2B234A3F00DC68C0 /* TipComponent.swift */,
+				E4DE8DB92B23A53000191B15 /* searchByAtomicNumber.swift */,
+				E4DE8DC42B243B2600191B15 /* deviceCheck.swift */,
+				E4DE8DC82B2442BB00191B15 /* quizQuestions.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		E414FB0F2B234E5700DC68C0 /* ar */ = {
+			isa = PBXGroup;
+			children = (
+				E414FB122B23596F00DC68C0 /* arComponent.swift */,
+			);
+			path = ar;
+			sourceTree = "<group>";
+		};
+		E4DE8DBB2B2433CB00191B15 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				E4DE8DBC2B2433DD00191B15 /* iPhoneHome.swift */,
+				E4DE8DBE2B2433E600191B15 /* iPadHome.swift */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E414FAEE2B232AF700DC68C0 /* Preview Assets.xcassets in Resources */,
+				E414FB0B2B23455900DC68C0 /* Launch Screen.storyboard in Resources */,
 				E414FAEB2B232AF700DC68C0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +231,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E414FB092B23301900DC68C0 /* itemDetails.swift in Sources */,
+				E414FB0D2B234A3F00DC68C0 /* TipComponent.swift in Sources */,
+				E4DE8DC92B2442BB00191B15 /* quizQuestions.swift in Sources */,
+				E4DE8DB42B23985300191B15 /* iPadDetails.swift in Sources */,
+				E414FB132B23596F00DC68C0 /* arComponent.swift in Sources */,
+				E4DE8DB22B23983500191B15 /* iPhoneDetails.swift in Sources */,
+				E414FAFB2B232B2100DC68C0 /* ElementInfo.swift in Sources */,
+				E414FAFF2B232B2100DC68C0 /* ListItem.swift in Sources */,
+				E4DE8DBD2B2433DD00191B15 /* iPhoneHome.swift in Sources */,
+				E414FAFC2B232B2100DC68C0 /* AtomView.swift in Sources */,
 				E414FAE92B232AF500DC68C0 /* ContentView.swift in Sources */,
 				E414FAE72B232AF500DC68C0 /* chemARApp.swift in Sources */,
+				E4DE8DBF2B2433E600191B15 /* iPadHome.swift in Sources */,
+				E4DE8DC32B243B0C00191B15 /* randomElement.swift in Sources */,
+				E4DE8DBA2B23A53000191B15 /* searchByAtomicNumber.swift in Sources */,
+				E4DE8DC52B243B2600191B15 /* deviceCheck.swift in Sources */,
+				E414FB002B232B2100DC68C0 /* DetailsView.swift in Sources */,
+				E414FB042B232B6700DC68C0 /* blocksView.swift in Sources */,
+				E414FAFD2B232B2100DC68C0 /* Elements.swift in Sources */,
+				E414FAFE2B232B2100DC68C0 /* filterData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,13 +384,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"chemAR/Preview Content\"";
+				DEVELOPMENT_TEAM = 6F2T99L967;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = chemAR;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,6 +404,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ineerajrajeev.chemAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,13 +421,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"chemAR/Preview Content\"";
+				DEVELOPMENT_TEAM = 6F2T99L967;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = chemAR;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +441,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ineerajrajeev.chemAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

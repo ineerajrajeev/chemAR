@@ -1,21 +1,51 @@
 //
 //  ContentView.swift
-//  chemAR
+//  App
 //
-//  Created by Neeraj Shetkar on 08/12/23.
+//  Created by Neeraj Shetkar on 07/12/23.
 //
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+    
+    struct ElementTip: Tip {
+        let info: ElementInfo
+        var title: Text {
+            Text("What is \(info.name) ?")
         }
-        .padding()
+        var message: Text? {
+            Text("You can get to know new elements everytime you open an app")
+        }
+        var image: Image? {
+            Image(systemName: "atom")
+        }
+    }
+    
+    var body: some View {
+        ZStack {
+            NavigationStack {
+                VStack {
+                    TabView {
+                        VStack {
+                            if UIDevice.isiPad {
+                                iPadHome()
+                            } else {
+                                iPhoneHome()
+                            }
+                        }
+                        .tabItem {
+                            Label("Home", systemImage: "house")
+                        }
+                        BlockView()
+                            .tabItem {
+                                Label("Directory", systemImage: "book.pages")
+                            }
+                    }
+                }
+            }
+        }
     }
 }
 
