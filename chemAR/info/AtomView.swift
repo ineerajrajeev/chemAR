@@ -8,7 +8,7 @@ struct Atom: View {
     let animationTimer = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack {
+        LazyVStack {
             GeometryReader { geometry in
                 ZStack {
                     Circle()
@@ -20,13 +20,20 @@ struct Atom: View {
                     ForEach(info.shells.indices, id: \.self) { shellIndex in
                         if shellIndex < electronRotations.count {
                             let shell = info.shells[shellIndex]
-                            let radius = CGFloat(shellIndex + 1) * 20
+                            let radius = UIDevice.isiPad ? CGFloat(shellIndex + 1) * 25 : CGFloat(shellIndex + 1) * 20
                             
                             // Shell circle
                             Circle()
                                 .stroke(colorScheme == .dark ? Color.mint : Color.blue, lineWidth: 2)
                                 .frame(width: radius * 2, height: radius * 2)
                                 .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                                .overlay(
+                                    Text("\(shell)")
+                                        .position(getTextPosition(for: shellIndex, in: geometry.size, radius: radius))
+                                        .foregroundColor(colorScheme == .dark ? Color.white : Color.red)
+                                        .font(.subheadline)
+                                        .fontWeight(.bold)
+                                )
                             
                             // Display electrons in each shell
                             ForEach(0..<shell, id: \.self) { electronIndex in
@@ -59,6 +66,13 @@ struct Atom: View {
     private func setupRotations() {
         electronRotations = Array(repeating: 0.0, count: info.shells.count)
     }
+    
+    private func getTextPosition(for index: Int, in size: CGSize, radius: CGFloat) -> CGPoint {
+            let angle = 360.0 / Double(info.shells.count) * Double(index)
+            let xPos = cos(angle * .pi / 180) * Double(radius) + Double(size.width / 2)
+            let yPos = sin(angle * .pi / 180) * Double(radius) + Double(size.height / 2)
+            return CGPoint(x: xPos, y: yPos)
+        }
     
     private func animateRotations() {
         for i in 0..<electronRotations.count {

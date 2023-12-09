@@ -29,6 +29,7 @@
 		E4DE8DC32B243B0C00191B15 /* randomElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DC22B243B0C00191B15 /* randomElement.swift */; };
 		E4DE8DC52B243B2600191B15 /* deviceCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DC42B243B2600191B15 /* deviceCheck.swift */; };
 		E4DE8DC92B2442BB00191B15 /* quizQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DC82B2442BB00191B15 /* quizQuestions.swift */; };
+		E4DE8DCB2B248A6A00191B15 /* questionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE8DCA2B248A6A00191B15 /* questionGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		E4DE8DC22B243B0C00191B15 /* randomElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomElement.swift; sourceTree = "<group>"; };
 		E4DE8DC42B243B2600191B15 /* deviceCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deviceCheck.swift; sourceTree = "<group>"; };
 		E4DE8DC82B2442BB00191B15 /* quizQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizQuestions.swift; sourceTree = "<group>"; };
+		E4DE8DCA2B248A6A00191B15 /* questionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		E414FB022B232B5E00DC68C0 /* blocks */ = {
 			isa = PBXGroup;
 			children = (
+				E4DE8DC82B2442BB00191B15 /* quizQuestions.swift */,
 				E414FB032B232B6700DC68C0 /* blocksView.swift */,
 			);
 			path = blocks;
@@ -139,7 +142,7 @@
 				E414FB0C2B234A3F00DC68C0 /* TipComponent.swift */,
 				E4DE8DB92B23A53000191B15 /* searchByAtomicNumber.swift */,
 				E4DE8DC42B243B2600191B15 /* deviceCheck.swift */,
-				E4DE8DC82B2442BB00191B15 /* quizQuestions.swift */,
+				E4DE8DCA2B248A6A00191B15 /* questionGenerator.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				E414FB0D2B234A3F00DC68C0 /* TipComponent.swift in Sources */,
 				E4DE8DC92B2442BB00191B15 /* quizQuestions.swift in Sources */,
 				E4DE8DB42B23985300191B15 /* iPadDetails.swift in Sources */,
+				E4DE8DCB2B248A6A00191B15 /* questionGenerator.swift in Sources */,
 				E414FB132B23596F00DC68C0 /* arComponent.swift in Sources */,
 				E4DE8DB22B23983500191B15 /* iPhoneDetails.swift in Sources */,
 				E414FAFB2B232B2100DC68C0 /* ElementInfo.swift in Sources */,
