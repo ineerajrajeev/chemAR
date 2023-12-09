@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct QuizQuestions: View {
+    @Environment(\.colorScheme) var colorScheme
     @State private var showMessage = false
     @State private var ans = false
     let info = getRandomElement(from: elements) ?? mockData
@@ -43,6 +44,12 @@ struct QuizQuestions: View {
                                     }
                                 }
                             }
+                    } else {
+                        Text("")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundStyle(ans ? Color.green : Color.red)
+                            .padding()
                     }
                 }
                 Text("\(question.question)")
@@ -66,10 +73,9 @@ struct QuizQuestions: View {
                         }) {
                             Text(option)
                                 .padding()
-                                .foregroundColor(Color.black)
                                 .frame(width: 80, height: 50)
-                                .background(Color.white)
-                                .foregroundColor(Color.black)
+                                .background(colorScheme == .dark ? Color.white : Color.black)
+                                .foregroundStyle(colorScheme == .dark ? Color.black : Color.white)
                                 .clipShape(Capsule())
                         }
                         .padding(.vertical, 4)
