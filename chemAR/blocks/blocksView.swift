@@ -10,7 +10,7 @@ enum Blocks: String, CaseIterable {
 
 struct BlockView: View {
     @State private var searchTerm = ""
-    @State private var selectedBlock: Blocks = .s
+    @State var selectedBlock: Blocks = .s
 
     var filteredElements: [String: ElementInfo] {
         if selectedBlock == .all {

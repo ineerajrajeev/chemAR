@@ -6,23 +6,9 @@
 //
 
 import SwiftUI
-import TipKit
 
 struct ContentView: View {
-    
-    struct ElementTip: Tip {
-        let info: ElementInfo
-        var title: Text {
-            Text("What is \(info.name) ?")
-        }
-        var message: Text? {
-            Text("You can get to know new elements everytime you open an app")
-        }
-        var image: Image? {
-            Image(systemName: "atom")
-        }
-    }
-    
+
     var body: some View {
         ZStack {
             NavigationStack {
@@ -39,9 +25,13 @@ struct ContentView: View {
                             Label("Home", systemImage: "house")
                         }
                         BlockView()
-                            .tabItem {
-                                Label("Directory", systemImage: "book.pages")
-                            }
+                        .tabItem {
+                            Label("Directory", systemImage: "book.pages")
+                        }
+                        QuizQuestions()
+                        .tabItem {
+                            Label("Quiz", systemImage: "book.pages")
+                        }
                     }
                 }
             }
