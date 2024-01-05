@@ -25,3 +25,8 @@ func filterElementsByBlock(block: String) -> [String: ElementInfo] {
     }
 }
 
+func getElementByNumber(number: Int) -> ElementInfo? {
+    let numberInt = number <= 118 && number > 0 ? number: 1
+    let foundElement = elements.first { $0.value.number == numberInt }
+    return foundElement?.value
+}

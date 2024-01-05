@@ -28,6 +28,8 @@ struct TitleBarHomePage: View {
                         Text("\(info.name)")
                             .fontWeight(.bold)
                             .font(.title)
+                    }
+                    HStack {
                         NavigationLink(
                             destination: Details(info: info),
                             label: {

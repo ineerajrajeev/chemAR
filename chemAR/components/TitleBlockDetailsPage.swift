@@ -28,6 +28,8 @@ struct TitleBlockDetailsPage: View {
                         Text("\(info.name)")
                             .fontWeight(.bold)
                             .font(.title)
+                    }
+                    HStack {
                         NavigationLink(
                             destination: ARViewContainer(info: info),
                             label: {

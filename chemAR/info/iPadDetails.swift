@@ -11,15 +11,14 @@ struct iPadDetails: View {
     @Environment(\.colorScheme) var colorScheme
     
     @State private var isTitleBarHidden = false
-    
-    let info: ElementInfo
 
     @State var temperature_in_c: Bool = true
     
+    @State var info: ElementInfo
+    
     init(info: ElementInfo) {
-        
-        self.info = info
-    }
+       self._info = State(initialValue: info)
+   }
         
     var body: some View {
         GeometryReader { geometry in
@@ -77,6 +76,28 @@ struct iPadDetails: View {
                 }
             }
         }
+        .gesture(
+            withAnimation(.easeInOut) {
+                DragGesture()
+                    .onEnded { gesture in
+                        if gesture.translation.width < 0 {
+                            // Swiping left for previous element +1
+                            if info.number + 1 > 118 {
+                                info = getElementByNumber(number: 1)!
+                            } else {
+                                info = getElementByNumber(number: info.number + 1)!
+                            }
+                        } else if gesture.translation.width > 0 {
+                            // Swiping right for next element -1
+                            if info.number - 1 < 1 {
+                                info = getElementByNumber(number: 118)!
+                            } else {
+                                info = getElementByNumber(number: info.number - 1)!
+                            }
+                        }
+                    }
+            }
+        )
     }
     
     func swipeGesture() -> some Gesture {

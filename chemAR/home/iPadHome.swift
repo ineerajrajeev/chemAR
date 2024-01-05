@@ -12,13 +12,16 @@ struct iPadHome: View {
     
     @State private var isTitleBarHidden = false
     
-    let info = getRandomElement(from: elements)!
+    @State var info: ElementInfo
     
     var properties: [(String, String, String, Color)] = []
     
     var block: Blocks = .all
         
     init() {
+        
+        self._info = State(initialValue: getRandomElement(from: elements)!)
+        
         self.properties = [
             ("Period", "\(info.period)", "mappin.and.ellipse.circle", Color.red),
             ("Block", "\(info.block)", "tablecells.badge.ellipsis", Color.green),
