@@ -22,7 +22,7 @@ struct ListItem: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .frame(width: 40, height: 40)
-                        .foregroundColor(Color.black)
+                        .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                 }
                 .padding(8)
                 .shadow(radius: 2)

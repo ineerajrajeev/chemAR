@@ -10,6 +10,8 @@ import SwiftUI
 struct iPadHome: View {
     @Environment(\.colorScheme) var colorScheme
     
+    @State private var isTitleBarHidden = false
+    
     let info = getRandomElement(from: elements)!
     
     var properties: [(String, String, String, Color)] = []
@@ -41,32 +43,29 @@ struct iPadHome: View {
         GeometryReader { geometry in
             ZStack {
                 HStack(spacing: 0) {
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: 20) { // Title block
                         HStack {
-                            Spacer()
                             VStack {
-                                Text(info.symbol)
-                                    .font(.system(size: 80))
-                                    .frame(width: 140, height: 80)
-                                    .padding(44)
-                                    .background {
-                                        RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                            .foregroundColor(Color(uiColor: .secondarySystemBackground))
-                                            .shadow(radius: 5)
-                                    }
-                                Text(info.name)
-                                    .font(.title)
-                                    .fontWeight(.bold)
+                                Spacer()
                                 Atom(info: info)
                                     .font(.title2)
                                     .padding(35)
-                                    .frame(width: 350, height: 350)
+                                    .frame(width: 350, height: 300)
                                     .multilineTextAlignment(.leading)
+                                Spacer()
+                                if !isTitleBarHidden {
+                                    TitleBarHomePage(info: info)
+                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                        .frame(width: 325, height: 350)
+                                }
+                                Spacer()
                             }
-                            Spacer()
                         }
                         .padding()
                     }
+                    .gesture(
+                        swipeGesture()
+                    )
                     .frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.98)
                     .padding()
                     VStack {
@@ -81,16 +80,6 @@ struct iPadHome: View {
                                         .foregroundColor(Color.blue.opacity(0.2))
                                         .shadow(radius: 25)
                                 )
-                            NavigationLink(
-                                destination: Details(info: info),
-                                label: {
-                                    Label("More Info", systemImage: "info.circle")
-                                        .frame(width: 150, height: 50)
-                                        .background(colorScheme == .dark ? Color.white : Color.black)
-                                        .foregroundStyle(colorScheme == .dark ? Color.black : Color.white)
-                                        .clipShape(Capsule())
-                                }
-                            )
                         }
                         .padding()
                         ScrollView {
@@ -129,6 +118,23 @@ struct iPadHome: View {
                 }
             }
         }
+    }
+    
+    func swipeGesture() -> some Gesture {
+        return DragGesture()
+            .onChanged { gesture in
+                if gesture.translation.height > 0 {
+                    // Swiping down
+                    withAnimation {
+                        self.isTitleBarHidden = true
+                    }
+                } else {
+                    // Swiping up
+                    withAnimation {
+                        self.isTitleBarHidden = false
+                    }
+                }
+            }
     }
 }
 

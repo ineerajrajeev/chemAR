@@ -1,7 +1,7 @@
 import Foundation
 
 struct ElementInfo: Identifiable {
-    let id = UUID()
+    let id = UUID().uuidString
     let name: String
     let shells: [Int]
     let appearance: String

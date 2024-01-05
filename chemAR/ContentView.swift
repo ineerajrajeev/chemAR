@@ -32,6 +32,10 @@ struct ContentView: View {
                         .tabItem {
                             Label("Quiz", systemImage: "doc.questionmark")
                         }
+                        PeriodicTable()
+                        .tabItem {
+                            Label("Periodic Table", systemImage: "doc.questionmark")
+                        }
                     }
                 }
             }

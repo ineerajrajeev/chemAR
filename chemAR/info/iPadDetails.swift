@@ -9,6 +9,9 @@ import SwiftUI
 
 struct iPadDetails: View {
     @Environment(\.colorScheme) var colorScheme
+    
+    @State private var isTitleBarHidden = false
+    
     let info: ElementInfo
 
     @State var temperature_in_c: Bool = true
@@ -19,70 +22,76 @@ struct iPadDetails: View {
     }
         
     var body: some View {
-        ZStack {
-            HStack {
-                VStack {
-                    Atom(info: info)
-                }
-                Spacer()
-                VStack {
-                    HStack {
-                        Text(info.name)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Spacer()
-                        NavigationLink(
-                            destination: ARViewContainer(info: info),
-                            label: {
-                                Label("AR View", systemImage: "rotate.3d.fill")
-                                    .frame(width: 150, height: 50)
-                                    .background(colorScheme == .dark ? Color.white : Color.black)
-                                    .foregroundStyle(colorScheme == .dark ? Color.black : Color.white)
-                                    .clipShape(Capsule())
+        GeometryReader { geometry in
+            ZStack {
+                HStack(spacing: 0) {
+                    VStack(alignment: .leading, spacing: 20) {
+                        HStack {
+                            VStack {
+                                Spacer()
+                                Atom(info: info)
+                                    .font(.title2)
+                                    .padding(35)
+                                    .frame(width: 350, height: 300)
+                                    .multilineTextAlignment(.leading)
+                                Spacer()
+                                if !isTitleBarHidden {
+                                    TitleBlockDetailsPage(info: info)
+                                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                        .frame(width: 325, height: 350)
+                                }
+                                Spacer()
                             }
-                        )
+                        }
+                        .padding()
                     }
-                    ScrollView {
+                    .frame(width: geometry.size.width * 0.45, height: geometry.size.height * 0.98)
+                    .padding()
+                    .gesture(
+                        swipeGesture()
+                    )
+                    VStack {
                         VStack(alignment: .trailing) {
                             Text("\(info.description)")
                                 .font(.title2)
                                 .padding(35)
-                                .frame(width: 580)
+                                .frame(width: .infinity, height: geometry.size.height * 0.45)
                                 .multilineTextAlignment(.leading)
                                 .background(
                                     RoundedRectangle(cornerRadius: 15)
                                         .foregroundColor(Color.blue.opacity(0.2))
                                         .shadow(radius: 25)
                                 )
-
                         }
                         .padding()
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 200))], spacing: 16) {
-                            ForEach(properties, id: \.0) { property in
-                                if property.0 == "Period" {
-                                    NavigationLink(
-                                        destination: BlockView(selectedPeriod: Int(property.1)!),
-                                        label: {
-                                            PropertyCard(title: property.0, value: property.1, icon: property.2, color: property.3)
-                                        }
-                                    )
-                                } else if property.0 == "Melting Point" || property.0 == "Boiling Point" {
-                                    Button(action: {
-                                        temperature_in_c.toggle()
-                                    }, label: {
-                                        PropertyCard(title: property.0, value: temp(property.1), icon: property.2, color: property.3)
-                                    })
-                                } else {
+                        ScrollView {
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 200))], spacing: 16) {
+                                ForEach(properties, id: \.0) { property in
                                     PropertyCard(title: property.0, value: property.1, icon: property.2, color: property.3)
                                 }
                             }
+                            .padding()
                         }
                     }
+                    .frame(width: geometry.size.width * 0.5)
                 }
-                .font(.title2)
             }
         }
-        .padding()
+    }
+    
+    func swipeGesture() -> some Gesture {
+        return DragGesture()
+            .onChanged { gesture in
+                if gesture.translation.height > 0 {
+                    withAnimation {
+                        self.isTitleBarHidden = true
+                    }
+                } else {
+                    withAnimation {
+                        self.isTitleBarHidden = false
+                    }
+                }
+            }
     }
     
     private var properties: [(String, String, String, Color)] {
@@ -110,7 +119,7 @@ struct iPadDetails: View {
             if !temperature_in_c {
                 return value + "°F"
             } else {
-                var temp_in_c = (Float(value)! - 32.0) * (5/9)
+                let temp_in_c = (Float(value)! - 32.0) * (5/9)
                 return "\(String(format: "%.1f",temp_in_c)) °C"
             }
         }

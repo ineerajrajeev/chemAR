@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02BC5E8F2B487C4000A6945D /* TitleBlockHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC5E8E2B487C4000A6945D /* TitleBlockHomePage.swift */; };
+		02BC5E912B488D6300A6945D /* TitleBlockDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC5E902B488D6300A6945D /* TitleBlockDetailsPage.swift */; };
+		02BC5E942B48A16200A6945D /* PeriodicTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC5E932B48A16200A6945D /* PeriodicTable.swift */; };
 		E414FAE72B232AF500DC68C0 /* chemARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAE62B232AF500DC68C0 /* chemARApp.swift */; };
 		E414FAE92B232AF500DC68C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414FAE82B232AF500DC68C0 /* ContentView.swift */; };
 		E414FAEB2B232AF700DC68C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E414FAEA2B232AF700DC68C0 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02BC5E8E2B487C4000A6945D /* TitleBlockHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBlockHomePage.swift; sourceTree = "<group>"; };
+		02BC5E902B488D6300A6945D /* TitleBlockDetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBlockDetailsPage.swift; sourceTree = "<group>"; };
+		02BC5E932B48A16200A6945D /* PeriodicTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTable.swift; sourceTree = "<group>"; };
 		E414FAE32B232AF500DC68C0 /* chemAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chemAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E414FAE62B232AF500DC68C0 /* chemARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chemARApp.swift; sourceTree = "<group>"; };
 		E414FAE82B232AF500DC68C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02BC5E922B48A14700A6945D /* PeriodicTable */ = {
+			isa = PBXGroup;
+			children = (
+				02BC5E932B48A16200A6945D /* PeriodicTable.swift */,
+			);
+			path = PeriodicTable;
+			sourceTree = "<group>";
+		};
 		E414FADA2B232AF500DC68C0 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +103,7 @@
 		E414FAE52B232AF500DC68C0 /* chemAR */ = {
 			isa = PBXGroup;
 			children = (
+				02BC5E922B48A14700A6945D /* PeriodicTable */,
 				E4DE8DBB2B2433CB00191B15 /* home */,
 				E414FB0F2B234E5700DC68C0 /* ar */,
 				E414FB072B23300200DC68C0 /* components */,
@@ -143,6 +158,8 @@
 				E4DE8DB92B23A53000191B15 /* searchByAtomicNumber.swift */,
 				E4DE8DC42B243B2600191B15 /* deviceCheck.swift */,
 				E4DE8DCA2B248A6A00191B15 /* questionGenerator.swift */,
+				02BC5E8E2B487C4000A6945D /* TitleBlockHomePage.swift */,
+				02BC5E902B488D6300A6945D /* TitleBlockDetailsPage.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -236,6 +253,7 @@
 			files = (
 				E414FB092B23301900DC68C0 /* itemDetails.swift in Sources */,
 				E414FB0D2B234A3F00DC68C0 /* TipComponent.swift in Sources */,
+				02BC5E8F2B487C4000A6945D /* TitleBlockHomePage.swift in Sources */,
 				E4DE8DC92B2442BB00191B15 /* quizQuestions.swift in Sources */,
 				E4DE8DB42B23985300191B15 /* iPadDetails.swift in Sources */,
 				E4DE8DCB2B248A6A00191B15 /* questionGenerator.swift in Sources */,
@@ -246,8 +264,10 @@
 				E4DE8DBD2B2433DD00191B15 /* iPhoneHome.swift in Sources */,
 				E414FAFC2B232B2100DC68C0 /* AtomView.swift in Sources */,
 				E414FAE92B232AF500DC68C0 /* ContentView.swift in Sources */,
+				02BC5E942B48A16200A6945D /* PeriodicTable.swift in Sources */,
 				E414FAE72B232AF500DC68C0 /* chemARApp.swift in Sources */,
 				E4DE8DBF2B2433E600191B15 /* iPadHome.swift in Sources */,
+				02BC5E912B488D6300A6945D /* TitleBlockDetailsPage.swift in Sources */,
 				E4DE8DC32B243B0C00191B15 /* randomElement.swift in Sources */,
 				E4DE8DBA2B23A53000191B15 /* searchByAtomicNumber.swift in Sources */,
 				E4DE8DC52B243B2600191B15 /* deviceCheck.swift in Sources */,
