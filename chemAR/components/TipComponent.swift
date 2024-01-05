@@ -10,6 +10,7 @@ import TipKit
 
 struct ElementTip: Tip {
     let element: ElementInfo
+    let id = UUID()
     var title: Text {
         Text("Tip")
     }

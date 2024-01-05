@@ -30,7 +30,7 @@ struct ContentView: View {
                         }
                         QuizQuestions()
                         .tabItem {
-                            Label("Quiz", systemImage: "book.pages")
+                            Label("Quiz", systemImage: "doc.questionmark")
                         }
                     }
                 }

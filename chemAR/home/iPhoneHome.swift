@@ -32,7 +32,12 @@ struct iPhoneHome: View {
                         }
                     )
                 }
-                HStack {
+                VStack {
+                    Atom(info: info)
+                        .font(.title2)
+                        .padding(35)
+                        .frame(width: 350, height: 350)
+                        .multilineTextAlignment(.leading)
                     ScrollView {
                         VStack {
                             Text("\(info.description)")
@@ -46,7 +51,6 @@ struct iPhoneHome: View {
                         }
                             .frame(height: 300)
                             .padding()
-                        QuizQuestions()
                     }
                 }
             }

@@ -6,25 +6,36 @@ enum Blocks: String, CaseIterable {
     case p = "p"
     case d = "d"
     case f = "f"
+    
+    var periods: [Int] {
+        switch self {
+            case .all: return [0, 1, 2, 3, 4, 5, 6, 7, 8]
+            case .s: return [0, 1, 2, 3, 4, 5, 6, 7, 8]
+            case .p: return [0, 2, 3, 4, 5, 6, 7]
+            case .d: return [0, 4, 5, 6, 7]
+            case .f: return [0, 6, 7]
+        }
+    }
 }
 
 struct BlockView: View {
     @State private var searchTerm = ""
-    @State var selectedBlock: Blocks = .s
+    @State var selectedBlock: Blocks = .all
+    @State var selectedPeriod: Int = 0
 
     var filteredElements: [String: ElementInfo] {
-        if selectedBlock == .all {
-            guard !searchTerm.isEmpty else { return elements }
-            return elements.filter {
+        if selectedBlock == .all { // If block selected to all
+            guard !searchTerm.isEmpty else { return elements } // If search term is empty return all elements
+            return elements.filter { // If search term is not empty
                 $0.value.name.localizedCaseInsensitiveContains(searchTerm) ||
                 $0.value.symbol.localizedCaseInsensitiveContains(searchTerm) ||
                 String($0.value.number).localizedCaseInsensitiveContains(searchTerm)
             }
-        } else {
+        } else { // If particular block is selected
             let blockElements = Dictionary(uniqueKeysWithValues:
                 elements.filter { filterElementsByBlock(block: selectedBlock.rawValue).keys.contains($0.key) }
-            )
-            guard !searchTerm.isEmpty else { return blockElements }
+            ) // Filter the elements by block
+            guard !searchTerm.isEmpty else { return blockElements } // Check if searc term is empty
             return blockElements.filter {
                 $0.value.name.localizedCaseInsensitiveContains(searchTerm) ||
                 $0.value.symbol.localizedCaseInsensitiveContains(searchTerm)
@@ -32,27 +43,60 @@ struct BlockView: View {
         }
     }
     
+    var filteredByPeriod: [String: ElementInfo] {
+        if selectedPeriod == 0 { // If All Periods is selected
+            return filteredElements
+        } else {
+            return filteredElements.filter { $0.value.period == selectedPeriod }
+        }
+    }
+    
     var sortedElements: [ElementInfo] {
-        filteredElements.values.sorted { $0.number < $1.number }
+        filteredByPeriod.values.sorted { $0.number < $1.number }
     }
 
     var body: some View {
         VStack {
             HStack {
-                Text("\(selectedBlock.rawValue.uppercased()) Block")
+                Text(selectedBlock.rawValue == "*" ? "All Blocks" : "\(selectedBlock.rawValue.uppercased()) Block")
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
             }
             SearchBar(searchTerm: $searchTerm)
             
-            Picker(selection: $selectedBlock, label: Text("Block")) {
-                ForEach(Blocks.allCases, id: \.self) {
-                    Text("\($0.rawValue.uppercased()) Block")
+            HStack {
+                Picker(selection: $selectedBlock, label: Text("Block")) {
+                    ForEach(Blocks.allCases, id: \.self) {
+                        if ($0.rawValue == "*") {
+                            Text("All Blocks")
+                        } else {
+                            Text("\($0.rawValue.uppercased()) Block")
+                        }
+                    }
                 }
+                .pickerStyle(.automatic)
+                .padding()
+                
+                Spacer()
+                
+                Picker(selection: $selectedPeriod, label: Text("Block")) {
+                    ForEach(selectedBlock.periods, id: \.self) {
+                        if ($0 == 0) {
+                            Text("All Periods")
+                        } else {
+                            Text("\($0) Period")
+                        }
+                    }
+                }
+                .pickerStyle(.automatic)
+                .padding()
+                
+                Button("Clear", action: {
+                    selectedBlock = .all
+                    selectedPeriod = 0
+                })
             }
-            .pickerStyle(.segmented)
-            .padding()
             
             List(sortedElements, id: \.name) { element in
                 NavigationLink(destination: Details(info: element)) {
@@ -64,6 +108,14 @@ struct BlockView: View {
                                 .fill(blockColor(element.block))
                         )
                 }
+                .contextMenu(ContextMenu(menuItems: {
+                    NavigationLink(destination: Details(info: element)) {
+                        Text("Details View")
+                    }
+                    NavigationLink(destination: ARViewContainer(info: element)) {
+                        Text("AR View")
+                    }
+                }))
             }
         }
         .listStyle(PlainListStyle())
